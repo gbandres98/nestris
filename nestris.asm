@@ -1,3 +1,7 @@
+;; 8bitworkshop directives:
+;#resource "nes.cfg"
+;#define CFGFILE nes.cfg
+
 .segment "HEADER"
 
     .byte 'N', 'E', 'S', $1A ; Signature
