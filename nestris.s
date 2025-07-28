@@ -20,7 +20,7 @@
 .segment "BSS"
 pieceMap: .res 1024
 
-.include "src/zeropage.asm"
+.include "src/zeropage.s"
 
 .segment "CHARS"
 .incbin "assets/nestris_spr.chr"
@@ -28,12 +28,12 @@ pieceMap: .res 1024
 
 .segment "CODE"
 
-.include "src/reset.asm"
-.include "src/main.asm"
-.include "src/nmi.asm"
-.include "src/movement.asm"
-.include "src/pieces.asm"
-.include "src/score.asm"
+.include "src/reset.s"
+.include "src/main.s"
+.include "src/nmi.s"
+.include "src/movement.s"
+.include "src/pieces.s"
+.include "src/score.s"
 
 .segment "RODATA"
 
