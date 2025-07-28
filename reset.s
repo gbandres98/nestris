@@ -16,6 +16,7 @@ vblankwait1:        ; wait for vblank to make sure PPU is ready
     BIT $2002       ; returns bit 7 of ppustatus reg, which holds the vblank status with 0 being no vblank, 1 being vblank
     BPL vblankwait1
 
+    LDX #0
 clearmem:
     LDA #$00
     STA $0000, x
@@ -26,7 +27,8 @@ clearmem:
     STA $0500, x
     STA $0600, x
     STA $0700, x
-    INX 
+    INX
+    CPX #0
     BNE clearmem
 
 vblankwait2:        ; PPU is ready after this

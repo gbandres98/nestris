@@ -479,8 +479,6 @@ HandleAEnd:
 HandleBEnd:
 
     LDA $4016 ; Select
-    AND #1
-    STA inputSave
 
     LDA $4016 ; Start
     AND #1
@@ -497,6 +495,8 @@ HandleBEnd:
 HandleStartEnd:
 
     LDA $4016 ; Up
+    AND #1
+    STA inputSave
 
     LDA $4016 ; Down
     AND #1
