@@ -283,43 +283,7 @@ LineClearAnimationEnd:
     LDA levelChangeFlag
     BEQ ColorChangeEnd
 
-    LDA level
-:
-    CMP #4
-    BCC :+
-    SEC
-    SBC #5
-    JMP :-
-:
-
-    ASL
-    ASL
-    TAX
-    LDA $2002
-    LDA #$3F
-    STA $2006
-    LDA #$02
-    STA $2006
-    LDA LevelColors, x
-    STA $2007
-    LDA LevelColors+1, x
-    STA $2007
-
-    LDA #$3F
-    STA $2006
-    LDA #$06
-    STA $2006
-    LDA LevelColors+2, x
-    STA $2007
-
-    LDA #$3F
-    STA $2006
-    LDA #$12
-    STA $2006
-    LDA LevelColors, x
-    STA $2007
-    LDA LevelColors+1, x
-    STA $2007
+    JSR ChangeColors
 
     LDA #0
     STA levelChangeFlag
@@ -436,5 +400,47 @@ NMIEnd:
 :
     LDA renderingDisabled
     BEQ :-
+    RTS
+.endproc
+
+.proc ChangeColors
+LDA level
+:
+    CMP #4
+    BCC :+
+    SEC
+    SBC #5
+    JMP :-
+:
+
+    ASL
+    ASL
+    TAX
+    LDA $2002
+    LDA #$3F
+    STA $2006
+    LDA #$02
+    STA $2006
+    LDA LevelColors, x
+    STA $2007
+    LDA LevelColors+1, x
+    STA $2007
+
+    LDA #$3F
+    STA $2006
+    LDA #$06
+    STA $2006
+    LDA LevelColors+2, x
+    STA $2007
+
+    LDA #$3F
+    STA $2006
+    LDA #$12
+    STA $2006
+    LDA LevelColors, x
+    STA $2007
+    LDA LevelColors+1, x
+    STA $2007
+
     RTS
 .endproc
