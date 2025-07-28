@@ -20,25 +20,25 @@
 .segment "BSS"
 pieceMap: .res 1024
 
-.include "src/zeropage.s"
+.include "zeropage.s"
 
 .segment "CHARS"
-.incbin "assets/nestris_spr.chr"
-.incbin "assets/nestris_bg.chr"
+.incbin "nestris_spr.chr"
+.incbin "nestris_bg.chr"
 
 .segment "CODE"
 
-.include "src/reset.s"
-.include "src/main.s"
-.include "src/nmi.s"
-.include "src/movement.s"
-.include "src/pieces.s"
-.include "src/score.s"
+.include "reset.s"
+.include "main.s"
+.include "nmi.s"
+.include "movement.s"
+.include "pieces.s"
+.include "score.s"
 
 .segment "RODATA"
 
 Palettes:
-.incbin "assets/nestris_palettes.dat"
+.incbin "nestris_palettes.dat"
 
 BG:
-.incbin "assets/nestris_nt.nam"
+.incbin "nestris_nt.nam"
