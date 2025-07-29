@@ -1,5 +1,7 @@
 # NEStris
 
+<img width="594" height="613" alt="Screenshot 2025-07-29 142324" src="https://github.com/user-attachments/assets/f38a6505-e1fe-4bc9-835c-cf83a3eed821" />
+
 ## My own implementation of NES tetris
 
 ### Why?
