@@ -12,7 +12,9 @@ This code is the result of my learning process and I don't recommend anyone to t
 
 ### How to play the game
 
-You can download to game ROM from github releases and play it on any NES emulator. I recommend [Mesen](https://www.mesen.ca/).
+[There's a playable web version](https://gbandres98.github.io/nestris) thanks to the [nes-js](https://github.com/takahirox/nes-js) project.
+
+For better resolution and color accuracy you can download [the game ROM from github releases](https://github.com/gbandres98/nestris/releases/download/v1.1.0/nestris.nes) and play it on any NES emulator. I recommend [Mesen](https://www.mesen.ca/).
 
 - Left/Right: Move piece
 - A/B: Rotate piece
