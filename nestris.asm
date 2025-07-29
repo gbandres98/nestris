@@ -1,9 +1,3 @@
-;; 8bitworkshop directives:
-;#resource "nes.cfg"
-;#define CFGFILE nes.cfg
-;#define LIBARGS ,
-;; End of directives
-
 .segment "HEADER"
 
     .byte 'N', 'E', 'S', $1A ; Signature
@@ -20,25 +14,25 @@
 .segment "BSS"
 pieceMap: .res 1024
 
-.include "zeropage.s"
+.include "src/zeropage.asm"
 
 .segment "CHARS"
-.incbin "nestris_spr.chr"
-.incbin "nestris_bg.chr"
+.incbin "assets/nestris_spr.chr"
+.incbin "assets/nestris_bg.chr"
 
 .segment "CODE"
 
-.include "reset.s"
-.include "main.s"
-.include "nmi.s"
-.include "movement.s"
-.include "pieces.s"
-.include "score.s"
+.include "src/reset.asm"
+.include "src/main.asm"
+.include "src/nmi.asm"
+.include "src/movement.asm"
+.include "src/pieces.asm"
+.include "src/score.asm"
 
 .segment "RODATA"
 
 Palettes:
-.incbin "nestris_palettes.dat"
+.incbin "assets/nestris_palettes.dat"
 
 BG:
-.incbin "nestris_nt.nam"
+.incbin "assets/nestris_nt.nam"

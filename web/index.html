@@ -1,0 +1,60 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.pink.min.css"
+  />
+  <script
+    type="text/javascript"
+    src="https://cdn.rawgit.com/takahirox/nes-js/v0.0.1/build/nes.min.js"
+  ></script>
+  <script src="./timers.min.js"></script>
+  <script type="text/javascript">
+    function init() {
+      var url = "nestris.nes";
+      var request = new XMLHttpRequest();
+      request.responseType = "arraybuffer";
+
+      request.onload = function () {
+        var buffer = request.response;
+        var nes = new NesJs.Nes();
+
+        nes.setRom(new NesJs.Rom(buffer));
+        nes.setDisplay(
+          new NesJs.Display(document.getElementById("gameCanvas"))
+        );
+        nes.setAudio(new NesJs.Audio());
+
+        window.onkeydown = function (e) {
+          nes.handleKeyDown(e);
+        };
+        window.onkeyup = function (e) {
+          nes.handleKeyUp(e);
+        };
+
+        nes.bootup();
+        nes.run();
+      };
+
+      request.open("GET", url, true);
+      request.send(null);
+    }
+  </script>
+</head>
+
+<body onload="init()">
+  <main>
+    <h1 style="text-align: center;">NEStris</h1>
+    <div style="display: flex; flex-direction: row; justify-content: center">
+      <div style="height: 60vh;max-height: 1024;display: flex;flex-direction: column;gap: 20px;">
+        <canvas id="gameCanvas" width="256" height="240" style="height: 100%;"></canvas>
+        <div>
+            <li>← / →: Move piece</li>
+            <li>Z / X: Rotate piece</li>
+            <li>↓: Drop piece</li>
+            <li>↑: Save piece</li>
+            <li>Enter: Start</li>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
