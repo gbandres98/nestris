@@ -176,6 +176,8 @@ vblankwait2:        ; PPU is ready after this
     STA pieceIndex
     STA nextPieceIndex
 
+    JSR ChangeColors
+
     RTS
 
 .endproc
