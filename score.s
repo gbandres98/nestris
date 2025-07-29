@@ -371,8 +371,8 @@ EndScoring:
 LevelColors:
     .byte $28,$22,$32,$00
     .byte $1B,$15,$35,$00
-    .byte $26,$2C,$36,$00
     .byte $1C,$27,$3C,$00
+    .byte $26,$2C,$36,$00
     .byte $13,$17,$33,$00
 
 GameOverRows:

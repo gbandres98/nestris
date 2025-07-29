@@ -185,10 +185,10 @@ Sprites:
      .byte 8, $01, $20, 8
   
             ;vert tile attr horiz J
-    .byte -8, $03, $20, 8
-    .byte $0, $03, $20, 8
-    .byte 8, $03, $20, 8
+    .byte -8, $03, $20, 0
+    .byte $0, $03, $20, 0
     .byte 8, $03, $20, 0
+    .byte 8, $03, $20, -8
 
             ;vert tile attr horiz Z
     .byte -8, $02, $20, 0
@@ -215,7 +215,7 @@ Sprites:
     .byte 0, $04, $20, 8
 
             ;vert tile attr horiz I
-    .byte -8, $01, $20, -8
     .byte -8, $01, $20, 0
-    .byte -8, $01, $20, 8
-    .byte -8, $01, $20, 16
+    .byte 0, $01, $20, 0
+    .byte 8, $01, $20, 0
+    .byte 16, $01, $20, 0

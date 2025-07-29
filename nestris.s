@@ -1,14 +1,7 @@
-; Nestris: my own implementation of tetris for the NES
-; Left/Right: Move piece
-; A/B: Rotate piece
-; Up: Save piece
-; Down: Drop piece
-
-; Source: github.com/gbandres98/nestris
-
 ;; 8bitworkshop directives:
 ;#resource "nes.cfg"
 ;#define CFGFILE nes.cfg
+;#define LIBARGS
 ;; End of directives
 
 .segment "HEADER"

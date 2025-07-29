@@ -303,7 +303,7 @@ TurnTable: ; 3 bit piece index, 4 bit turn index PPPT TTTT
     .byte 0,0,      0,0,    0,0,    0,0
     .byte 0,0,      0,0,    0,0,    0,0
     ; I
-    .byte 16,-16,   8,-8,   0,0,    -8,8
     .byte -16,16,   -8,8,   0,0,    8,-8
     .byte 16,-16,   8,-8,   0,0,    -8,8
     .byte -16,16,   -8,8,   0,0,    8,-8
+    .byte 16,-16,   8,-8,   0,0,    -8,8
