@@ -1,7 +1,7 @@
 ;; 8bitworkshop directives:
 ;#resource "nes.cfg"
 ;#define CFGFILE nes.cfg
-;#define LIBARGS
+;#define LIBARGS ,
 ;; End of directives
 
 .segment "HEADER"
